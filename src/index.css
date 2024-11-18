@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background-color: black;
+    overflow-x: hidden;
+    min-width: 300px;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 1px solid transparent;
+  }
+}
+
+@layer components {
+  .input-box {
+    @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none;
+  }
+  .btn-primary {
+    @apply text-sm text-white px-4 py-2 rounded bg-primary;
+  }
+  .icon-btn {
+    @apply text-xl text-black cursor-pointer hover:text-primary;
+  }
+  .input-label {
+    @apply text-xs text-slate-400;
+  }
+  .modal {
+    @apply w-[600px] max-h-[75%] text-white rounded-md mx-auto mt-14 p-5 overflow-y-auto;
+  }
+  .notes-container {
+    @apply grid grid-cols-5 gap-4 mt-0;
+  }
+
+  @media screen and (max-width: 500px) {
+    .modal {
+      @apply w-[75%];
+    }
+    .notes-container {
+      @apply grid grid-cols-1 gap-4 mt-0;
+    }
+  }
+
+  @media screen and (min-width: 501px) and (max-width: 768px) {
+    .modal {
+      @apply w-[75%];
+    }
+    .notes-container {
+      @apply grid grid-cols-2 gap-4 mt-0;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .modal {
+      @apply w-[75%];
+    }
+    .notes-container {
+      @apply grid grid-cols-3 gap-4 mt-0;
+    }
+  }
+}
