@@ -60,6 +60,20 @@ const App = () => {
     getAllNotes();
   };
 
+  const copyNote = (noteDetails) => {
+    console.log(noteDetails);
+    setModal({
+      isShow: true,
+      noteData: {
+        title: noteDetails.title,
+        content: noteDetails.content,
+        color: noteDetails.color,
+      },
+      type: "add",
+      backgroundModal: noteDetails.color,
+    });
+  };
+
   const updateBgColor = (color) => {
     setModal({ ...modal, backgroundModal: color });
   };
@@ -93,6 +107,7 @@ const App = () => {
                 onPin={() => {
                   pinNote(note);
                 }}
+                onCopy={() => copyNote(note)}
               />
             ))}
           </div>
@@ -109,7 +124,7 @@ const App = () => {
         style={{
           overlay: { backgroundColor: "rgba(0, 0, 0, 0.7)" },
           content: {
-            background: modal.backgroundModal + "70",
+            background: modal.backgroundModal + "bd",
             backdropFilter: "blur(20px)",
           },
         }}
