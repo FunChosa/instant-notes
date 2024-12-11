@@ -34,7 +34,7 @@ A simple and intuitive note-taking application built with React, leveraging Tail
 
 ## State Management
 
-The game's state is managed using the `useState` hook.
+The application's state is managed using the `useState` hook.
 
 ## Data Storage
 
